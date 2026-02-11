@@ -5,15 +5,12 @@ export type Controller = (
   req: Request,
   res: Response,
   next: NextFunction
-) => void | Promise<void>;
+) => void | Promise<void> | Response;
 
 declare global {
   namespace Express {
     interface Request {
-      user?: {
-        userId: string;
-        username: string;
-      };
+      userId?: string
     }
   }
 }

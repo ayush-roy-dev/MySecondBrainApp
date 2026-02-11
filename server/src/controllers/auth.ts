@@ -22,12 +22,19 @@ export const signup: Controller = async (req, res) => {
 
 export const signin: Controller = async (req, res) => {
     const username = req.body.username;
-    const password = req.body.username;
+    const password = req.body.password;
     const user = await User.findOne({username})
-    if (!user || !user.comparePassword(password)) {
+    if (!user) {
         res.status(403).json({"msg": "Wrong username or password"})
         return
     }
+    const isValid = await user.comparePassword(password)
+    console.log(isValid);
+    if (!isValid) {
+        res.status(403).json({"msg": "Wrong username or password"})
+        return
+    }
+    
     
     res.status(200).json({"msg": "signin", "token": user.createJWT()})
 }

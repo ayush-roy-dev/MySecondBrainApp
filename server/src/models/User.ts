@@ -19,8 +19,8 @@ userSchema.pre('save', async function () {
     this.password = await bcrypt.hash(this.password, salt);
 })
 
-userSchema.methods.createJWT = function(this: IUser) {
-    const token = jwt.sign({userId: this._id.toString(), username: this.username},
+userSchema.methods.createJWT = function() {
+    const token = jwt.sign({userId: this._id.toString()},
         process.env.JWT_SECRET as string,
         {expiresIn: process.env.TOKEN_VALIDITY_TIME as string} as any
     )
