@@ -7,6 +7,9 @@ const app = express()
 import { connectDB } from "./db/db"
 import authRouter from "./routers/authRouter"
 
+// stock middlewares
+app.use([express.json(), express.urlencoded()]);
+
 
 
 app.use("/api/v1", authRouter)

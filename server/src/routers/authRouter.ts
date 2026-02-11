@@ -1,6 +1,5 @@
 import { Router } from "express";
-import signup from "../controllers/signup";
-import signin from "../controllers/signin";
+import { signup, signin } from "../controllers/auth";
 const authRouter = Router()
 
 authRouter.route('/signup').post(signup)

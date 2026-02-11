@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/types.ts","./src/controllers/signin.ts","./src/controllers/signup.ts","./src/db/db.ts","./src/models/Content.ts","./src/models/Link.ts","./src/models/Tag.ts","./src/models/User.ts","./src/routers/authRouter.ts"],"version":"5.9.3"}
+{"root":["./src/index.ts","./src/types.ts","./src/controllers/auth.ts","./src/db/db.ts","./src/models/Content.ts","./src/models/Link.ts","./src/models/Tag.ts","./src/models/User.ts","./src/routers/authRouter.ts","./src/routers/contentRouter.ts"],"version":"5.9.3"}
