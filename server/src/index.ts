@@ -8,6 +8,8 @@ const app = express()
 import { connectDB } from "./db/db"
 import authRouter from "./routers/authRouter"
 import contentRouter from "./routers/contentRouter"
+import brainRouter from "./routers/brainRouter"
+import { shareBrain } from "./controllers/brain"
 
 // stock middlewares
 app.use([express.json(), express.urlencoded()]);
@@ -16,16 +18,9 @@ app.use([express.json(), express.urlencoded()]);
 // routers
 app.use("/api/v1", authRouter)
 app.use("/api/v1", contentRouter)
+app.use("/api/v1", brainRouter)
 
 
-
-app.post("/api/v1/brain/share", (req, res) => {
-    
-})
-
-app.get("/api/v1/brain/:shareLink", (req, res) => {
-    
-})
 
 const port = process.env.PORT || 3000
 const start = async () => {

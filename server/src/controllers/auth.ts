@@ -29,7 +29,6 @@ export const signin: Controller = async (req, res) => {
         return
     }
     const isValid = await user.comparePassword(password)
-    console.log(isValid);
     if (!isValid) {
         res.status(403).json({"msg": "Wrong username or password"})
         return
