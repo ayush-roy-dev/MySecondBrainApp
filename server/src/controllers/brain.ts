@@ -17,7 +17,7 @@ export const shareBrain: Controller = async (req, res) => {
     } else {
         await Link.deleteOne({userId: req.userId})
         res.json({msg: "No share"})
-    }
+    }  
 
 }
 
